@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "transformers-readapt"
+version = "0.1.0"
+description = "Linearly combine 🤗 transformers models"
+authors = ["Walter Nelson <walterj.nelson@mail.utoronto.ca>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+torch = "^2.4.0"
+transformers = "^4.44.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
