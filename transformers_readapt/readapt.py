@@ -22,7 +22,8 @@ def readapt(base_model, finetuned_model, instruction_model, finetuned_weight=0.5
     Returns:
         combined_model: The combined model.
     """
-    assert type(finetuned_model) == type(instruction_model), "Models must be of the same type."
+    if type(finetuned_model) != type(instruction_model):
+        warn("Fine-tuned and instruction-tuned models are not of the same type. This may cause unexpected behavior.")
 
     if not isinstance(finetuned_model, nn.Module) or not isinstance(instruction_model, nn.Module):
         raise ValueError("Models must be PyTorch models.")
